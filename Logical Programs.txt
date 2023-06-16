@@ -1,0 +1,995 @@
+*******************************  https://www.learnerslesson.com/CSHARP/C-Sharp-Basic.htm  *********************************
+
+//Count number of occurrences of a number in an array
+public class HelloWorld
+{ 
+    public static void Main(string[] args)
+    {
+       int[] a={1,2,3,4,5,3,2};
+       for(int i=0; i<a.Length;i++)
+       {
+           int count=1;
+           for(int j=i+1;j<a.Length;j++)
+           {
+               if(a[i]==a[j])
+               {
+                   count++;
+                   a[j]=0;
+               }
+           }
+           if(a[i]!=0)
+            Console.WriteLine(a[i]+ " "+count);
+       }
+    }
+}
+
+public class RemoveGivenEle
+{
+    public static void Main(string[] args)
+    {
+        int[] a={1,2,3,4,5,3};
+    
+        int num=Convert.ToInt32(Console.ReadLine());
+        for(int i=0;i<a.Length;i++)
+        {
+            if(a[i]==num)
+            {
+                a[i]=0;
+            }
+            
+        }
+            Console.WriteLine(String.Join(" ",a));
+        }
+        
+    }
+
+public class Alternate
+{
+    public static void Main(string[] args)
+    {
+        int[] a={ 1,2,3,4,5};
+        for(int i=0; i<a.Length;i=i+2)
+        {
+            Console.WriteLine(a[i]);
+        }
+    }
+}
+
+public class DuplicateNo
+{
+    public static void Main(string[] args)
+    {
+        int[] a={2,3,6,4,6,7,2,4};
+        
+        for(int i=0; i<a.Length;i++)
+        {
+            int count=1;
+            for(int j=i+1;j<a.Length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    count++;
+                    a[j]=0;
+                }
+            }
+            if(a[i]!=0 && count>1)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+    }
+}
+
+public class Maxno
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = new int[] { 67, 95, 93, 89, 87 ,55,34,67,23};
+            int max = 0;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+            Console.WriteLine("max Element " + max);
+          
+    }
+}
+
+public class Duplicateword
+{
+    public static void Main(string[] args)
+    {
+      string s="India is India is my country";
+      string[] s1 = s.Split(" ");
+      int count;
+      for (int i = 0; i < s1.Length; i++)
+      {
+          count = 1;
+          for (int j = i + 1; j < s1.Length; j++)
+          {
+              if (s1[i].Equals(s1[j]))
+              {
+                  count++;
+                  s1[j] = "0";
+              }
+          }
+          if (s1[i] != "0" && count > 1)
+          {
+              Console.WriteLine(s1[i] + count);
+          }
+      }
+    }
+}
+
+public class Descending          ******************************************* Strig Preseve Spacea also Imp *****************************
+{
+    public static void Main(string[] args)
+    {
+        String s = "India is my country";
+        String[] str = s.Split();
+           for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = i + 1; j < str.Length; j++)
+                {
+                    if (str[i].CompareTo(str[j]) == -1)
+                    {
+                        String temp = str[i];
+                        str[i] = str[j];
+                        str[j] = temp;
+                    }
+                }
+            }
+            Console.WriteLine(String.Join(" ",str));
+    }
+}
+
+public class LongWord                  ******************************
+{
+    public static void Main(string[] args)
+    {
+         String s="India is my country";
+         String[] str = s.Split();
+            int max = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i].Length > max)
+                {
+                    max = str[i].Length;
+                }
+            }
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i].Length == max)
+                {
+                    Console.WriteLine(str[i]);
+                }
+            }
+    }
+}
+
+public class Anagram    888******************************************************888
+{
+    public static void Main(string[] args)
+    {
+        String str="heater";
+        String str1="reheat";
+        
+        char[] ch=str.ToLower().ToCharArray();
+        char[] ch1=str1.ToLower().ToCharArray();
+        Array.Sort(ch);
+        Array.Sort(ch1);
+        string s=new string(ch);
+        string s1=new string(ch1);
+        
+        if(s==s1)
+        {
+            Console.WriteLine("Annagram");
+        }
+        else
+        {
+            Console.WriteLine("not Anagram");
+        }
+        
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int alpha=0;
+        int spl=0;
+        int digit=0;
+        string str="hello@123";
+        for(int i=0;i<str.Length;i++)
+        {
+            if(str[i]>='a' && str[i]<='z')
+            {
+                alpha++;
+            }
+            else if(str[i]>='0' && str[i]<='9')
+            {
+                digit++;
+            }
+            else
+            {
+                spl++;
+            }
+        }
+       Console.WriteLine("alphabate "+alpha);
+       Console.WriteLine("digits "+digit);
+       Console.WriteLine("Special "+spl);
+       
+    }
+    
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+            String str = "Krushna";
+           
+            String revstring = "";
+
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                revstring = revstring + str[i];
+            }
+            Console.WriteLine(revstring);
+        
+    }
+}
+public class Revsre
+{
+    public static void Main(string[] args)
+    {
+        String str="Krushna Bodke";
+        String str1="";
+        for(int i=0; i<str.Length;i++)
+        {
+            str1=str[i]+str1;
+        }
+        Console.WriteLine(str1);
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+     String str="India Is Country";
+     Char[] ch=str.ToCharArray();
+     Console.WriteLine(ch);
+     for(int i=0; i<ch.Length;i++)
+     {
+         if(ch[i]>='a' && ch[i]<='z')
+         {
+             ch[i]=(char)(ch[i]-32);
+         }
+         else if ((ch[i]>='A' && ch[i]<='Z'))
+         {
+             ch[i]=(char)(ch[i]+32);
+         }
+     }
+      Console.WriteLine(String.Join(" ",ch));
+    }
+}
+}
+
+public class HelloWorld
+{
+    public void Splitt()
+    {
+        Console.WriteLine("Enter String");
+        string str1=Console.ReadLine();
+        string[] str=str1.Split("$");
+        foreach(string s in str)
+        {
+            Console.WriteLine(s);
+        }
+    }
+    public static void Main(string[] args)
+    {
+        HelloWorld h=new HelloWorld();
+        h.Splitt();
+        
+    }
+}
+
+public class Occurancechar
+{
+    public static void Main(string[] args)
+    {
+      String s="India is my country";
+      Char[] ch=s.ToCharArray();
+      for(int i=0; i<ch.Length;i++)
+      {
+          int count=1;
+         for(int j=i+1; j<ch.Length;j++)
+        {
+          if(ch[i]==ch[j])
+          {
+              count++;
+              ch[j]='0';
+          }
+        } 
+        if(ch[i]!='0' && ch[i]!=' ')
+        {
+            Console.WriteLine(ch[i]+" "+count);
+        }
+        
+      }
+    }
+}
+********************************Property*********************************
+
+public class Product
+{
+    int id;
+    string name;
+    int price;
+    
+     public int Id{ set { id=value;}
+                    get { return id;}
+                  }
+      public String Name{ set { name=value;}
+                    get { return name;}
+                  }
+     public int Price{ set { price=value;}
+                       get { return price;}
+                  }  
+     
+}
+
+public class Hello
+{
+    
+    public static void Main(string[] args)
+    {
+        Product p=new Product();
+        p.Id=1;
+        p.Name="Mobile";
+        p.Price=18000;
+   Console.WriteLine($" id={p.Id} name={p.Name} price={p.Price}");
+    }
+}
+************************************With Object intilaizer Syntax*******************************************
+public class Product
+{
+    int id;
+    string name;
+    int price;
+    
+     public int Id{ set { id=value;}
+                    get { return id;}
+                  }
+      public String Name{ set { name=value;}
+                    get { return name;}
+                  }
+     public int Price{ set { price=value;}
+                       get { return price;}
+                  }  
+}
+
+public class Hello
+{
+    
+    public static void Main(string[] args)
+    {
+        Product p=new Product();
+        p.Id=1;
+        p.Name="Mobile";
+        p.Price=18000;
+   Console.WriteLine($" id={p.Id} name={p.Name} price={p.Price}");
+
+   Product q=new Product(){Id=1, Name="Chair", Price=500};
+
+   Console.WriteLine($" id={q.Id} name={q.Name} price={q.Price}");
+    }
+}
+********************************************Auto Increment***************************************************
+public class Product
+{
+    int id;
+    string name;
+    int price;
+    static int count=0;
+    
+    public Product()
+    {
+       count++;
+       id=count;
+    }
+     public int Id{ set { id=value;}
+                    get { return id;}
+                  }
+      public String Name{ set { name=value;}
+                    get { return name;}
+                  }
+     public int Price{ set { price=value;}
+                       get { return price;}
+                  }  
+}
+
+public class Hello
+{
+public static void Main(string[] args)
+    {
+        Product p=new Product();
+     
+        p.Name="Mobile";
+        p.Price=18000;
+   Console.WriteLine($" id={p.Id} name={p.Name} price={p.Price}");
+   Product q=new Product(){ Name="Chair", Price=500};
+   Console.WriteLine($"id={q.Id} name={q.Name} price={q.Price}");
+   Product r=new Product(){Name="Vic", Price=2000};
+   Console.WriteLine($"id={r.Id} name={r.Name} price={r.Price}");
+    Product s=new Product(){Name="Mob", Price=2000};
+   Console.WriteLine($"id={s.Id} name={s.Name} price={s.Price}");
+    }
+}
+************************************************Auto Incriment**********************************************
+public class Product
+{
+    int id;
+    string name;
+    int price;
+    static int count=0;
+    
+    public Product()
+    {
+       count++;
+       this.id=count;
+    }
+     public int Id{ 
+                    get { return id;}
+                  }
+      public String Name{ set { name=value;}
+                    get { return name;}
+                  }
+     public int Price{ set { price=value;}
+                       get { return price;}
+                  }  
+}
+
+public class Hello
+{
+public static void Main(string[] args)
+    {
+        Product p=new Product();
+        p.Name="Mobile";
+        p.Price=18000;
+   Console.WriteLine($" id={p.Id} name={p.Name} price={p.Price}");
+   Product q=new Product(){ Name="Chair", Price=500};
+   Console.WriteLine($"id={q.Id} name={q.Name} price={q.Price}");
+   Product r=new Product(){Name="Vic", Price=2000};
+   Console.WriteLine($"id={r.Id} name={r.Name} price={r.Price}");
+    Product s=new Product(){Name="Mob", Price=2000};
+   Console.WriteLine($"id={s.Id} name={s.Name} price={s.Price}");
+    }
+}
+**********************************************Overloading************************************************
+public class Addition
+{
+    public void Add(int a,int b)
+    {
+        Console.WriteLine("sum="+ (a+b));
+    }
+    public int Add(int a, int b, int c)
+    {
+        int sum=(a+b+c);
+        return sum;
+    }
+    public void Add(int a,double b)
+    {
+        Console.WriteLine("sum="+ (a+b));
+    } 
+    
+}
+public class HelloWorld
+{
+    
+    public static void Main(string[] args)
+    {
+        Addition a=new Addition();
+       Console.WriteLine(a.Add(10,20,30));
+       a.Add(10,20);
+       a.Add(10,20);
+    }
+}
+**********************************Revere String Array*******************************
+ public class Str
+    {
+        static void Main(string[] args)
+        {
+            string[] str = { "Krushna", "Ganesh", "Tushar" };
+            string str1 = "";
+            Char[] ch = { 'a', 'b' };
+            string str2 = new string(ch);
+            for (int i = 0; i < str.Length; i++)
+            {
+                str1 = str1 +" " + str[i] ;
+               
+            }
+            Console.WriteLine(str1);
+            Console.WriteLine(str2);
+           
+            string str3 = "";
+            for (int i = 0; i < str1.Length; i++)
+            {
+                str3= str1[i] + str3;
+                
+            }
+            Console.WriteLine(str3);
+            Console.ReadLine();
+        }
+             
+    }
+***********************************************Extension Method************************************
+public class Calculate
+    {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine(a+b);
+        }
+    }
+public static class Extension
+{
+        public static void Mul(this Calculate t1,int a, int b)
+        {
+            int mul=a*b;
+            Console.WriteLine(mul);
+        }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+      Calculate c=new Calculate();
+      c.Mul(10,20);
+    }
+}
+
+*********************************************** Partial Class *********************************************
+public partial class Squ
+{
+    public void Add(int a, int b)
+    {
+        Console.WriteLine(a+b);
+    }
+    partial void Square(int a)
+    {
+        Console.WriteLine(a*a);
+    }
+}
+public partial class Squ
+{
+   partial void Square(int a);
+    public void Helper(int a)
+    {
+        Square(a);
+    }
+}
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Squ s=new Squ();
+        s.Helper(4);
+        s.Add(10,20);
+    }
+}
+************************************************************Exception Handling********************************
+public class MarksException : Exception
+{
+    public MarksException(String Message):base(Message)
+    {
+        
+    }
+}
+public class Student
+{
+    private int marks;
+    public void AcceptMarks(int marks)
+    {
+        if(marks>100)
+        {
+            throw new MarksException("Marks can not greater than 100");
+        }
+        else
+        {
+            this.marks=marks;
+            Console.WriteLine(marks);
+        }
+    }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+         Student s=new Student();
+       try
+       {
+          
+            s.AcceptMarks(120);
+       }
+       catch(Exception ex)
+       {
+           Console.WriteLine(ex.Message);
+       }
+    }
+}
+********************************************** Ref Keyword*********************************
+public class Re
+{
+   public void Swap(ref int a,ref int b)    
+   {
+       int temp=a;
+       a=b;
+       b=temp;
+       Console.WriteLine("After Swap" +a +" "+b);
+   }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int a=10;
+        int b=20;
+        Console.WriteLine("Without Swap"+a +" "+b);
+        Re r=new Re();
+        r.Swap(ref a, ref b);
+    }
+}
+********************************************* Out Parameters*************************************
+public class Out
+{
+   public void Parameter(int a,int b, out int sum)    
+   {
+       sum=a+b;  // must initialize
+       Console.WriteLine(sum);
+   }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int a=10 , b=20, sum;  // no need to initialize out parameters
+        
+        Out r=new Out();
+        r.Parameter(a,b,out sum);
+    }
+}
+*********************************** Params Keyword ************************************
+public class Param
+{
+   public void Parameter(params string[] s)    
+   {
+       for(int i=0; i<s.Length;i++)
+       {
+           Console.Write(s[i]+" ");
+       }
+   }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Param r=new Param();
+        r.Parameter("Krushna", "Bodke");
+        r.Parameter("Krushna", "Bodke","Latur");
+        
+    }
+}
+**************************************** MultiThreading ************************************
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+public class Multi
+{
+   public void M1()    
+   {
+       for(int i=0; i<10;i++)
+       {
+           Console.Write(i+" ");
+           Thread.Sleep(300);
+       }
+   }
+    public void M2()    
+   {
+       for(int i=10; i<20;i++)
+       {
+           Console.Write("\n");
+           Console.Write(i+" ");
+       }
+   }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Multi r=new Multi();
+        Thread t1=new Thread(new ThreadStart(r.M1));
+        Thread t2=new Thread(new ThreadStart(r.M2));
+        t1.Start();
+        t1.Join();
+        t2.Start();
+    }
+}
+****************************************************************** Generic Collecton Copy************************************************
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+  public static void Main(string[] args)
+ {
+    List<string> list=new List<string>();
+    list.Add("Krushna");
+    list.Add("Vikas");
+    list.Insert(1,"Prakash");
+    string[] arr={"Ganesh","Tushar"};
+    list.AddRange(arr);
+ /* list.Remove("Prakash");
+    list.RemoveAt(0);
+    list.RemoveRange(1,2);*/
+    list.Sort();
+    list.Reverse();
+   // list.Clear();
+   List<string> list1=new List<string>(list);<<<<<<<<<<<<<<<<<<<<<<< Copy
+   list1[1]="Sankalp";                <<<<<<<<<<<<<<<<<<<<<<< Replace
+    foreach(string s in list1)
+    {
+        Console.WriteLine(s);
+    }
+  }
+}
+************************************************************* Generic Collection Stack****************************************************
+using System;
+using System.Collections.Generic;
+using System.Collections;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       Stack<string> stack=new Stack<string>();
+       stack.Push("krishna");
+       stack.Push("Vikas");
+       stack.Push("Vikas");
+       stack.Pop();
+       foreach(string s in stack)
+       {
+           Console.WriteLine(s);
+       }
+           Console.WriteLine(stack.Peek());
+           Console.WriteLine(stack.Count);
+    }
+}
+******************************************** Queue *****************************************************
+using System;
+using System.Collections.Generic;
+using System.Collections;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       Queue<string> q=new Queue<string>();
+       q.Enqueue("Krushna");
+       q.Enqueue("Vikas");
+       q.Enqueue("Prakash");
+       q.Dequeue();
+       foreach(string s in q)
+       {
+           Console.WriteLine(s);
+       }
+           Console.WriteLine(q.Peek());
+           Console.WriteLine(q.Count);
+           Console.WriteLine(q.ToArray());
+           
+    }
+}
+********************************************* Dictionary **************************************************
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Dictionary<int,string> d=new Dictionary<int,string>();
+        d.Add(1,"Krushna");
+        d.Add(2,"Maroti");
+        d.Add(3,"Bodke");
+        d[4]="Prakash";       // Add
+        d[2]="Vikas";         // Update Value
+        d.Remove(3);          // Remove
+    
+        foreach(KeyValuePair<int,string> item1 in d)
+        {
+            Console.WriteLine($"{item1.Key}  {item1.Value}");
+        }
+    // copy     
+     Dictionary<int,string> d1=new Dictionary<int,string>(d);    // Copy    
+        foreach(KeyValuePair<int,string> item in d1)
+        {
+          Console.WriteLine($"{item.Key}  {item.Value}");
+        }
+        if(d.ContainsKey(1))
+        {
+           Console.WriteLine("Key is found");
+        }
+        
+    }
+}
+**************************************** HashSet **************************************
+//stores generic list, unordered, math, unique, Communicate
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       HashSet<string> hash=new HashSet<string>();
+       hash.Add("Krishna");
+       hash.Add("Krushna");
+       hash.Add("krushna");
+       hash.Remove("krushna");
+       foreach(string item in hash)
+       {
+           Console.WriteLine(item);
+       }
+    }
+}
+****************************************** Class Collection*******************************
+using System;
+using System.Collections.Generic;
+public class Categories
+{
+    public string Category {set;get;}
+    public List<Products> pro=new List<Products>();
+}
+public class Products
+{
+    public int Id{set;get;}
+    public String Name {set;get;}
+    public int Price{set;get;}
+    public List<Colors> col=new List<Colors>();
+}
+public class Colors
+{
+    public String Color {set;get;}
+    public String Company {set;get;}
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        List<Categories> cat=new List<Categories>();
+        cat.Add(new Categories {Category="Woods" ,
+        pro={new Products { Id=1, Name="Chair", Price=2000,
+        col={new Colors { Color="Red",Company="AsianPaints"},
+             new Colors {Color="Black",Company="Norlack"} }
+            },
+            new Products {Id=2, Name="Chair", Price=2000,
+            col={new Colors { Color="Red",Company="AsianPaints"}}}
+       }} );
+       
+         foreach(Categories  c in cat)
+         {
+             Console.WriteLine($" Category {c.Category}");
+              foreach(Products p in c.pro)
+             {
+               Console.WriteLine($"Product Details {p.Id} {p.Name} {p.Price}");
+                foreach(Colors q in p.col)
+               {
+                Console.WriteLine($" Color {q.Color} {q.Company}");
+                }
+             }
+         }
+    }
+}
+****************************************** Collection ******************************************
+using System;
+using System.Collections.Generic;
+public class Categories
+{
+    public string Category {set;get;}
+    public List<Products> pro=new List<Products>();
+}
+public class Products
+{
+    public int Id{set;get;}
+    public String Name {set;get;}
+    public List<Colors> col=new List<Colors>();
+}
+public class Colors
+{
+    public String Company {set;get;}
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        List<Categories> cat=new List<Categories>();
+        cat.Add(new Categories{ Category="Electronics",
+            pro={ new Products { Id=1,Name="Mobile",
+                col={ new Colors { Company="Xiaomi"}}
+            },
+              new Products{ Id=2, Name="TV",
+                  col={new Colors {Company="Samsung"}}
+              }  
+            }
+        });
+    }   
+}
+--------------------------------------------------------------
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic; 
+public class Employee
+{
+    public int Id{set;get;}
+    public string Name{set;get;}
+}
+public class EmpCrud
+{
+    public List<Employee> emplist;
+    public EmpCrud()
+    {
+        emplist=new List<Employee>();
+    }
+    public void Add(Employee emp)
+    {
+        emplist.Add(emp);
+    }
+     public List<Employee> Show()
+    {
+         
+         return emplist;
+    }
+    public void Delete(int id)
+    {
+         foreach(Employee item in emplist)
+         {
+             if(item.Id==id)
+             {
+                 emplist.Remove(item);
+                 break;
+             }
+         }
+    }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Hello Mono World");
+        EmpCrud empcrud=new EmpCrud();
+        Employee emp=new Employee();
+        Console.WriteLine ("Enter ID and Name");
+        int n=Convert.ToInt32(Console.ReadLine());
+        emp.Id=n;
+        string name=Console.ReadLine();
+        emp.Name=name;
+        empcrud.Add(emp);
+        List<Employee> list=new List<Employee>();
+        list=empcrud.Show();
+        foreach(var item in list)
+         {
+           Console.WriteLine(item.Id+" "+item.Name);
+         }
+        
+        Console.WriteLine ("Enter Id to delete");
+        int n1=Convert.ToInt32(Console.ReadLine());
+        empcrud.Delete(n1);
+      
+       
+        
+        
+    }
+}

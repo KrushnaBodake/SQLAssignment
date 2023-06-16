@@ -1,0 +1,61 @@
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        // 1!+4!+5!=145
+      int a=145;
+      
+      int sum=0;
+      while(a>0)
+      {
+          int fact=1;
+         int digit=a%10;
+       for(int i=1;i<=digit;i++)
+       {
+          fact=fact*i;
+       }
+       sum=sum+fact;
+        a=a/10;
+      }
+     
+      Console.WriteLine(sum);
+    }
+}
+-----------------------------------------------------------------------
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        // 3*3*3+7*7*7+1*1*1=371;
+        int num=371;
+        int sum=0;
+        
+        while(num>0)
+        {
+            int fact=1;
+           int digit=num%10;
+         for(int i=1;i<=3;i++)
+          {
+           fact=fact*digit; 
+          }
+             sum=sum+fact;
+             num=num/10;
+        }
+        Console.WriteLine(sum);
+    }
+}
+--------------------------------------------------------------------------
+using System;
+
+public class Ternary
+{
+    public static void Main(string[] args)
+    {
+        int n1=20;
+        int n2=30;
+        int n3=40;
+        int ans=(n1>n2)?(n1>n3)?n1:n3:(n2>n3?n2:n3);
+        Console.WriteLine(ans);
+    }
+}
+----------------------------------------------------------------------------
